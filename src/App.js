@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-
+import ListPage from '../src/components/ListPage/ListPage.js'
+import CartPage from '../src/components/CartPage/CartPage.js'
+import { useState } from 'react';
+import menu from './data.js'
 function App() {
+
+  const [countCart, setCountCart] = useState(0)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <div className='contentBlock'>
+        <div className='ListPage'>
+          <ListPage/>
+        </div>
+        <div className='CartPage'>
+          <CartPage
+            countCart={countCart}
+          />
+        </div>
+      </div>
     </div>
   );
 }

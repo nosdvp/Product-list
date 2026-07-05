@@ -1,0 +1,29 @@
+.CartPage-block{
+    width: 85%;
+    height: 88%;
+    //border: 1px solid red;
+    &__title{
+        width: 100%;
+        font-size: 26px;
+        color: #c7481d;
+        font-weight: bold;
+    }
+    &__blockInfo{
+        width: 100%;
+        height: auto;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &_img{
+            margin-top: 30px;
+        }
+        &_text{
+            color: #b7a7a1;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    }
+}

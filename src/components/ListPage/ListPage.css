@@ -1,0 +1,10 @@
+.ListPage-test {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.ListPage-card {
+  border: 1px solid red;
+  padding: 20px;
+}/*# sourceMappingURL=ListPage.css.map */
