@@ -1,10 +1,62 @@
-.ListPage-test {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+.ListPage-wrapper {
+    width: 100%;
+    height: auto;
 }
 
-.ListPage-card {
-    border: 1px solid red;
-    padding: 20px;
+.ListPage-title{
+    font-size: 30px;
+    font-weight: bold;
+    color: #281108;
+    margin: 20px 0;
+}
+
+.ListPage-menuBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    &__card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        &_img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+        &_textBlock {
+            width: 100%;
+            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            div:nth-child(1) {
+                font-size: 14px;
+                color: #87635a;
+            }
+            div:nth-child(2) {
+                font-size: 16px;
+                font-weight: 600;
+                color: #260f08;
+            }
+            div:nth-child(3) {
+                font-size: 16px;
+                font-weight: 700;
+                color: #c73b0f;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .ListPage-menuBox {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .ListPage-menuBox {
+        grid-template-columns: 1fr;
+    }
 }

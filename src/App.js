@@ -9,11 +9,11 @@ function App() {
 
   return (
     <div className="wrapper">
-      <div className='contentBlock'>
-        <div className='ListPage'>
+      <div className='blockInfo'>
+        <div className='listBlock'>
           <ListPage/>
         </div>
-        <div className='CartPage'>
+        <div className='cartBlock'>
           <CartPage
             countCart={countCart}
           />
