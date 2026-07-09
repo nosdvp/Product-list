@@ -6,16 +6,21 @@ import menu from './data.js'
 function App() {
 
   const [countCart, setCountCart] = useState(0)
+  const [cart, setCart] = useState([])
 
   return (
     <div className="wrapper">
       <div className='blockInfo'>
         <div className='listBlock'>
-          <ListPage/>
+          <ListPage
+            setCountCart = {setCountCart}
+            setCart = {setCart}
+          />
         </div>
         <div className='cartBlock'>
           <CartPage
-            countCart={countCart}
+            countCart = {countCart}
+            cart = {cart}
           />
         </div>
       </div>

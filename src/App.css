@@ -11,13 +11,12 @@ body {
   display: flex;
   align-items: start;
   justify-content: center;
-  padding-top: 75px;
+  padding: 75px 0;
 }
 
 .blockInfo{
   width: 1350px;
   height: auto;
-  /*border: 1px solid red;*/
   display: grid;
   grid-template-columns: 1.35fr 0.65fr;
   padding: 0px 10px ;
@@ -26,13 +25,11 @@ body {
 
 .listBlock{
   height: auto;
-  /*border: 1px solid green;*/
   width: 100%;
 }
 
 .cartBlock{
   height: auto;
-  /*border: 1px solid green;*/
   place-items: center;
 }
 
