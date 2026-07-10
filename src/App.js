@@ -7,6 +7,7 @@ function App() {
 
   const [countCart, setCountCart] = useState(0)
   const [cart, setCart] = useState([])
+  const [totalPrice, setTotalPrice] = useState(0)
 
   return (
     <div className="wrapper">
@@ -15,12 +16,18 @@ function App() {
           <ListPage
             setCountCart = {setCountCart}
             setCart = {setCart}
+            setTotalPrice = {setTotalPrice}
           />
         </div>
         <div className='cartBlock'>
           <CartPage
+            setCart = {setCart}
+            setCountCart = {setCountCart}
+            setTotalPrice = {setTotalPrice}
+
             countCart = {countCart}
             cart = {cart}
+            totalPrice = {totalPrice}
           />
         </div>
       </div>

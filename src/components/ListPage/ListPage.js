@@ -3,10 +3,11 @@ import './ListPage.scss'
 import { menu } from '../../data'
 import cart from '../../img/icon-add-to-cart.svg'
 
-const ListPage = ({ setCountCart, setCart }) => {
+const ListPage = ({ setCountCart, setCart, setTotalPrice }) => {
   const addToCart = (item) => {
     setCart(prev => [...prev, item])
     setCountCart(prev => prev + 1)
+    setTotalPrice(prev => prev + Number(item.price))
   }
 
   return (

@@ -2,8 +2,24 @@ import React from 'react'
 import './CartPage.scss'
 import cake from '../../img/illustration-empty-cart.svg'
 import close from '../../img/icon-remove-item.svg'
+import carbon from '../../img/icon-carbon-neutral.svg'
 
-const CartPage = ({countCart, cart}) => {
+const CartPage = ({
+  countCart, 
+  cart, 
+  totalPrice,
+  
+  setCountCart, 
+  setCart,
+  setTotalPrice
+}) => {
+
+  const deleteItem = (item) => {
+    setCart(cart.filter(cartItem => cartItem.id !== item.id))
+    setCountCart(prev => prev - 1)
+    setTotalPrice(prev => prev - item.price)
+  }
+
   return (
       <div className='CartPage-wrapper'>
         <div className='CartPage-wrapper__box'>
@@ -18,18 +34,30 @@ const CartPage = ({countCart, cart}) => {
                 {cart.map((item) => (
                   <div className='CartPage-wrapper__box_itemMenu'>
                     <div className='CartPage-wrapper__box_itemMenu_box'>
-                      <div>{item.name}</div>
+                      <div className='CartPage-wrapper__box_itemMenu_box_title'>{item.name}</div>
                       <div className='CartPage-wrapper__box_itemMenu_box_price'>
                         <div>счетчик</div>
                         <div>@{item.price}</div>
                         <div>$final</div>
                       </div>
                     </div>
-                    <div className='CartPage-wrapper__box_itemMenu_close'>
-                      <img src={close}/>
+                    <div className='CartPage-wrapper__box_itemMenu_close' onClick={() => deleteItem(item)}>
+                      <div>
+                        <img src={close}/>
+                      </div>
                     </div>
+                    
                   </div>
                 ))}
+                <div className='CartPage-wrapper__box_totalPrice'>
+                  <div>Order Total:</div>
+                  <div>${totalPrice}</div>
+                </div>
+                <div className='CartPage-wrapper__box_informBlock'>
+                  <img src={carbon}/>
+                  <div>This is a <span>carbon-nautral</span> delivery</div>
+                </div>
+                <div className='CartPage-wrapper__box_button'>Confirm Order</div>
               </>
             )}
         </div>
