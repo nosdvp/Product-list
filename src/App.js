@@ -1,6 +1,7 @@
 import './App.css';
 import ListPage from '../src/components/ListPage/ListPage.js'
 import CartPage from '../src/components/CartPage/CartPage.js'
+import Modal from './components/Modal/Modal.js';
 import { useState } from 'react';
 import menu from './data.js'
 function App() {
@@ -8,6 +9,8 @@ function App() {
   const [countCart, setCountCart] = useState(0)
   const [cart, setCart] = useState([])
   const [totalPrice, setTotalPrice] = useState(0)
+  const [orderNumber, setOrderNumber] = useState()
+  const [modal, setModal] = useState(false)
 
   return (
     <div className="wrapper">
@@ -24,6 +27,8 @@ function App() {
             setCart = {setCart}
             setCountCart = {setCountCart}
             setTotalPrice = {setTotalPrice}
+            setModal = {setModal}
+            setOrderNumber = {setOrderNumber}
 
             countCart = {countCart}
             cart = {cart}
@@ -31,6 +36,20 @@ function App() {
           />
         </div>
       </div>
+      {modal === true ? (
+          <Modal
+            cart = {cart}
+            orderNumber = {orderNumber}
+
+            setModal = {setModal}
+            setCart = {setCart}
+            setCountCart = {setCountCart}
+            setTotalPrice = {setTotalPrice}
+          />
+        ) : (
+          <>
+          </>
+        )}
     </div>
   );
 }

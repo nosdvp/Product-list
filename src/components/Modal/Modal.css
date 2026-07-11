@@ -1,0 +1,119 @@
+.ModalWrapper {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.363);
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ModalWrapper__card {
+  width: 500px;
+  min-height: 500px;
+  background-color: white;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.ModalWrapper__card_navBlock {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ModalWrapper__card_navBlock_confirm {
+  width: 40px;
+  height: 40px;
+}
+.ModalWrapper__card_navBlock_close {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+.ModalWrapper__card_navBlock_close:hover {
+  transform: scale(1.1);
+  transition: 0.1s;
+}
+.ModalWrapper__card_navBlock_close:active {
+  transform: scale(0.9);
+  transition: 0.1s;
+}
+.ModalWrapper__card_title {
+  font-size: 30px;
+  color: #260e06;
+  font-weight: bold;
+  padding: 20px 0 10px 0;
+}
+.ModalWrapper__card_text {
+  font-size: 16px;
+  color: #948a88;
+}
+.ModalWrapper__card_informBlock {
+  width: 100%;
+  min-height: 230px;
+  background-color: #fcf8f5;
+  margin: 20px 0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ModalWrapper__card_informBlock_blockData {
+  width: 90%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(216, 213, 212, 0.3843137255);
+}
+.ModalWrapper__card_informBlock_blockData_imgItem {
+  width: 50px;
+  height: 50px;
+}
+.ModalWrapper__card_informBlock_blockData_descrItem {
+  width: 70%;
+}
+.ModalWrapper__card_informBlock_blockData_descrItem div:nth-child(1) {
+  color: #260e06;
+  font-size: 16px;
+  font-weight: bold;
+}
+.ModalWrapper__card_informBlock_blockData_descrItem div:nth-child(2) {
+  display: flex;
+  gap: 15px;
+}
+.ModalWrapper__card_informBlock_blockData_descrItem div:nth-child(2) div:nth-child(1) {
+  color: #c83b0e;
+}
+.ModalWrapper__card_informBlock_blockData_descrItem div:nth-child(2) div:nth-child(2) {
+  color: #948a88;
+}
+.ModalWrapper__card_informBlock_blockData_price {
+  color: #260e06;
+  font-size: 18px;
+  font-weight: bold;
+}
+.ModalWrapper__card_button {
+  width: 100%;
+  height: 50px;
+  background-color: #c83b0e;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.ModalWrapper__card_button:hover {
+  background-color: #952c0c;
+}
+.ModalWrapper__card_button:active {
+  transform: scale(0.95);
+  transition: 0.2s;
+}/*# sourceMappingURL=Modal.css.map */

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './CartPage.scss'
 import cake from '../../img/illustration-empty-cart.svg'
 import close from '../../img/icon-remove-item.svg'
@@ -11,13 +11,29 @@ const CartPage = ({
   
   setCountCart, 
   setCart,
-  setTotalPrice
+  setTotalPrice,
+  setModal,
+  setOrderNumber,
 }) => {
 
   const deleteItem = (item) => {
     setCart(cart.filter(cartItem => cartItem.id !== item.id))
     setCountCart(prev => prev - 1)
     setTotalPrice(prev => prev - item.price)
+  }
+
+  const activeModal = () => {
+    let lengthOrder = 6
+    let numbers = '1234567890'
+    let getNumberOrder = ''
+
+    for(let i = 0; i < lengthOrder; i++){
+      let getRandomNumber = Math.floor(Math.random() * numbers.length)
+      getNumberOrder += getRandomNumber
+    }
+
+    setModal(true)
+    setOrderNumber(getNumberOrder)
   }
 
   return (
@@ -57,7 +73,7 @@ const CartPage = ({
                   <img src={carbon}/>
                   <div>This is a <span>carbon-nautral</span> delivery</div>
                 </div>
-                <div className='CartPage-wrapper__box_button'>Confirm Order</div>
+                <div className='CartPage-wrapper__box_button' onClick={activeModal}>Confirm Order</div>
               </>
             )}
         </div>

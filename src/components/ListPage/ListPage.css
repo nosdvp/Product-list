@@ -51,15 +51,17 @@
   justify-content: center;
   gap: 10px;
   cursor: pointer;
-}
-.ListPage-menuBox__card_addToCartBox_button_img {
-  width: 27px;
-  height: 27px;
-}
-.ListPage-menuBox__card_addToCartBox_button div:nth-child(2) {
   color: #260f08;
   font-weight: bold;
   font-size: 16px;
+}
+.ListPage-menuBox__card_addToCartBox_button:hover {
+  color: #c73b0f;
+  border: 1px solid #c73b0f;
+}
+.ListPage-menuBox__card_addToCartBox_button:hover_img {
+  width: 27px;
+  height: 27px;
 }
 .ListPage-menuBox__card_img {
   width: 100%;
