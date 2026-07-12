@@ -52,9 +52,9 @@ const CartPage = ({
                     <div className='CartPage-wrapper__box_itemMenu_box'>
                       <div className='CartPage-wrapper__box_itemMenu_box_title'>{item.name}</div>
                       <div className='CartPage-wrapper__box_itemMenu_box_price'>
-                        <div>счетчик</div>
+                        <div>x{item.count}</div>
                         <div>@{item.price}</div>
-                        <div>$final</div>
+                        <div>${item.count * item.price}</div>
                       </div>
                     </div>
                     <div className='CartPage-wrapper__box_itemMenu_close' onClick={() => deleteItem(item)}>

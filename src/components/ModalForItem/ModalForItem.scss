@@ -1,0 +1,131 @@
+.ModalForItem{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.363);
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__card{
+        width: 400px;
+        min-height: 500px;
+        background-color: white;
+        border: 10px;
+        box-sizing: border-box;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        &_close{
+            width: 100%;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            margin-bottom: 15px;            
+            img{
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+            }
+        }
+        &_imgBlock{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 300px;
+            padding-bottom: 15px;
+            img{
+                width: 300px;
+                height: 300px;
+                border-radius: 10px;
+                border: 2px solid #c83b0e;
+            }
+        }
+        &_name{
+            font-size: 25px;
+            color: #281108;
+            font-weight: bold;
+            text-align: center;
+            padding-bottom: 15px;
+        }
+        &_descr{
+            font-size: 16px;
+            color: #7c7373;
+            padding-bottom: 10px;
+        }
+        &_cal{
+            font-size: 15px;
+            color: #281108;
+            margin-bottom: 15px;
+        }
+        &_blockCount{
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            &_blockForButton{
+                width: 200px;
+                height: 50px;
+                border-radius: 30px;
+                border: 2px solid #c83b0e;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                overflow: hidden;
+                
+                div:nth-child(1),
+                div:nth-child(3){
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #c83b0e;
+                    cursor: pointer;
+                    :active{
+                        transform: scale(0.7);
+                        transition: 0.1s;
+                    }
+                    img{
+                        width: 15px;
+                        height: 15px;
+                        color: black;
+                        padding: 20px;
+                    }
+                }
+                div:nth-child(2){
+                    color: #c83b0e;
+                    font-weight: bold;
+                    font-size: 30px;
+                }
+                
+            }
+        }
+        &_button{
+            width: 100%;
+            height: 50px;
+            border-radius: 30px;
+            background-color: #c83b0e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.1s;
+            &:hover{
+                background-color: #952c0c;
+            }
+            &:active{
+                transform: scale(0.95);
+                transition: 0.1s;
+            }
+        }
+    }
+}

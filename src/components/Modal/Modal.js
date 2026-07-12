@@ -3,7 +3,7 @@ import './Modal.scss'
 import confirm from '../../img/icon-order-confirmed.svg'
 import close from '../../img/icon-remove-item.svg'
 
-const Modal = ({ cart, orderNumber, setModal, setCart, setCountCart, setTotalPrice }) => {
+const Modal = ({ cart, orderNumber, setModal, setCart, setCountCart, setTotalPrice, countItem }) => {
 
     const addToOrder = () => {
         setModal(false)
@@ -32,11 +32,11 @@ const Modal = ({ cart, orderNumber, setModal, setCart, setCountCart, setTotalPri
                         <div className='ModalWrapper__card_informBlock_blockData_descrItem'>
                             <div>{item.name}</div>
                             <div>
-                                <div>счетчик</div>
+                                <div>x{item.count}</div>
                                 <div>${item.price}</div>
                             </div>
                         </div>
-                        <div className='ModalWrapper__card_informBlock_blockData_price'>${item.price}</div>
+                        <div className='ModalWrapper__card_informBlock_blockData_price'>${item.price * item.count}</div>
                     </div>  
                 ))}
             </div>

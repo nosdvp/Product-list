@@ -3,11 +3,10 @@ import './ListPage.scss'
 import { menu } from '../../data'
 import cart from '../../img/icon-add-to-cart.svg'
 
-const ListPage = ({ setCountCart, setCart, setTotalPrice }) => {
-  const addToCart = (item) => {
-    setCart(prev => [...prev, item])
-    setCountCart(prev => prev + 1)
-    setTotalPrice(prev => prev + Number(item.price))
+const ListPage = ({ setCountCart, setCart, setTotalPrice, setModalForItem, setSelectedItem }) => {
+  const chooseProduct = (item) => {
+    setModalForItem(true)
+    setSelectedItem(item)
   }
 
   return (
@@ -17,7 +16,7 @@ const ListPage = ({ setCountCart, setCart, setTotalPrice }) => {
         {menu.map(item => (
         <div className='ListPage-menuBox__card'>
           <img src={item.image} className='ListPage-menuBox__card_img'></img>
-          <div className='ListPage-menuBox__card_addToCartBox' onClick={() => addToCart(item)}>
+          <div className='ListPage-menuBox__card_addToCartBox' onClick={() => chooseProduct(item)}>
             <div className='ListPage-menuBox__card_addToCartBox_button'>
               <img className='ListPage-menuBox__card_addToCartBox_button_img' src={cart}/>
               <div>Add to Cart</div>
