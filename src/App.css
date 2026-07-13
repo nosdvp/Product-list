@@ -41,4 +41,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
   }
+  .cartBlock{
+    margin-bottom: 30px;
+  }
 }

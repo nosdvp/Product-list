@@ -49,6 +49,7 @@ function App() {
             cart = {cart}
             orderNumber = {orderNumber}
             countItem = {countItem}
+            totalPrice = {totalPrice}
 
             setModal = {setModal}
             setCart = {setCart}

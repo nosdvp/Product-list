@@ -19,7 +19,7 @@ const CartPage = ({
   const deleteItem = (item) => {
     setCart(cart.filter(cartItem => cartItem.id !== item.id))
     setCountCart(prev => prev - 1)
-    setTotalPrice(prev => prev - item.price)
+    setTotalPrice(prev => prev - (item.price * item.count))
   }
 
   const activeModal = () => {
