@@ -24,18 +24,22 @@ const ModalForItem = ({
         setError(false)
     } 
     const decr = () => setCountItem(prev => prev - 1)
-    const closeModal = () => setModalForItem(false)
+    
+    const closeModal = () => {
+        setModalForItem(false)
+        setCountItem(0)
+    }
 
     const addToCart = () => {
         setCart(prev => {
-            const indexItem = prev.findIndex(item => item.id === selectedItem.id) 
+            const findIndex = prev.findIndex(item => item.id === selectedItem.id)
 
-            if(indexItem !== -1){
+            if(findIndex !== -1){
                 return prev.map(item => 
                     item.id === selectedItem.id
                     ? {
                         ...item,
-                        count: item.count + countItem 
+                        count:item.count + countItem
                     } : item
                 )
             }
