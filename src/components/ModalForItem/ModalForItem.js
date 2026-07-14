@@ -27,13 +27,26 @@ const ModalForItem = ({
     const closeModal = () => setModalForItem(false)
 
     const addToCart = () => {
-        setCart(prev => [
-            ...prev,
-            {
-              ...selectedItem,
-              count:countItem    
-        }
-        ])
+        setCart(prev => {
+            const indexItem = prev.findIndex(item => item.id === selectedItem.id) 
+
+            if(indexItem !== -1){
+                return prev.map(item => 
+                    item.id === selectedItem.id
+                    ? {
+                        ...item,
+                        count: item.count + countItem 
+                    } : item
+                )
+            }
+            return [
+                ...prev,
+                {
+                    ...selectedItem,
+                    count:countItem
+                }
+            ]
+        })
         
         setCountCart(prev => prev + countItem)
         setCountItem(0)
